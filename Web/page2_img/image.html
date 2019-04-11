@@ -1,0 +1,87 @@
+<html>
+<head>
+<title>Image</title>
+<STYLE TYPE="TEXT/CSS">
+A:link{
+	text-decoration:none;
+	color:#996666;
+	cursor:hand;
+	font-size:10pt;
+}
+A:visited{
+	text-decoration:none;
+	color:#996666;
+	cursor:hand;
+	font-size:10pt;
+}
+A:hover{
+	text-decoration:underline;
+	color:#000000;
+	cursor:hand;
+	font-size:10pt;
+}
+</STYLE>
+</head>
+
+<body background="bg2.jpg">
+
+	<table align=center cellspacing=0 cellpadding=0 border=0>
+	<tr>
+	<td width=400><pre><font size=3><font color=#000000 face=標楷體 size=4><b>影像走廊</b></font>
+<a href=4.jpg target=_blank onmouseover=javascript:change(4)>模仿烏龜的兔子</a> <a href=6.jpg target=_blank onmouseover=javascript:change(6)>位子被搶了</a> <a href=9.jpg target=_blank onmouseover=javascript:change(9)>唸書的地方</a> <a href=7.jpg target=_blank onmouseover=javascript:change(7)>小億號</a>
+<a href=1.jpg target=_blank onmouseover=javascript:change(1)>模仿烏龜的狗</a>   <a href=2.jpg target=_blank onmouseover=javascript:change(2)>騎狗英熊</a>   <a href=5.jpg target=_blank onmouseover=javascript:change(5)>你是笨蛋</a>
+<a href=3.jpg target=_blank onmouseover=javascript:change(3)>寒窗苦讀</a>      <a href=10.jpg target=_blank onmouseover=javascript:change(10)>小時後是肥滿兒</a>
+	</font></pre></td>	
+	<td width=210 align=center><img name="B" width=180></img></td>
+	</tr>
+	</table>
+	
+	<script>
+	photo=new Array;
+	photo[0]="baseball.gif";	
+	i=1;
+	
+	photo[i++]="1.jpg";
+	photo[i++]="2.jpg";
+	photo[i++]="3.jpg";
+	photo[i++]="4.jpg";
+	photo[i++]="5.jpg";
+	photo[i++]="6.jpg";
+	photo[i++]="7.jpg";
+	photo[i++]="baseball.gif";
+	photo[i++]="9.jpg"; 
+	photo[i++]="10.jpg";
+	 
+	
+	function change(num){
+		document.B.src=photo[num];
+	}
+	
+	var today = new Date();
+  	time=today.getHours()*60*60+today.getMinutes()*60+today.getSeconds();
+  	k=time%i;
+	
+	change(k);			
+	</script>
+	<!---------------------------------------------------------------------------->
+	
+	<!-----------------------隱藏功能--------------------------------------->
+	<script>
+	function keyfunction()
+		{
+		if (event.keyCode==76)                   //-----------l
+		   count=1; 
+		else if (event.keyCode==79 && count==1) 
+		        count=2;                         //-----------o
+		else if (event.keyCode==86 && count==2) 
+		        count=3;                         //-----------v
+ 		else if (event.keyCode==69 && count==3) {
+		        document.B.src="love.jpg";
+		        counter=0;
+		        }                           //-----------e			
+		}	
+	document.onkeydown=keyfunction;	
+	</script>
+	<!----------------------------------------------------------------------->
+	
+</body>	

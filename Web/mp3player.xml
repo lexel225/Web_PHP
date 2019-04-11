@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<player showDisplay="yes" showPlaylist="yes" autoStart="no">
+<song path="song2.mp3" title="張玉華-聖誕節" />
+<song path="song10.mp3" title="周杰倫-菊花台" />
+<song path="song9.mp3" title="楊乃文-之前" />
+<song path="song6.mp3" title="梁靜茹-失憶" />
+<song path="song5.mp3" title="江美琪-妹妹" />
+<song path="song8.mp3" title="蔡健雅-深信不疑" />
+<song path="song7.mp3" title="鄭中基-美女與野獸" />
+<song path="song4.mp3" title="周華健-以後" />
+<song path="song3.mp3" title="張棟樑-那一年" />
+<song path="song1.mp3" title="陳奕迅-對不起 謝謝" />
+</player>

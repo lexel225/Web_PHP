@@ -1,0 +1,73 @@
+<html>
+<title></title>
+<link rel=stylesheet type="text/css" href="../background.css">
+
+<body background="../bg2.jpg">
+
+  <script language="javascript" type="text/javascript">
+  function music(){
+    document.Myform.msg.value += "<embed src='mp3player.swf' width=130 height=150 wmode='transparent'  name='mp3player' type='application/x-shockwave-flash' >";
+  }
+  
+  function link(){
+    document.Myform.msg.value += "<a href='' target=_blank></a>";
+  }
+  
+  function img(){
+    document.Myform.msg.value += "<a href='' target=_blank><img src='' border=0></img></a>";
+  }
+  </script>
+
+
+	<form name="Myform" method=post action="NewArticle.php" align=center>
+	<table cellspacing=5 cellpadding=4 border=1 width=500>
+
+	<tr><td align=centaer><input type=submit value="送出">	<input type=reset value="重新輸入">
+  </td></tr>
+  
+	<tr><td>主題:
+	<select name=select>
+	<option value='3'>首頁文章</option>
+	<option value='1' selected>記事本</option>
+	<option value='2'>寫作</option>
+	<option value='0'>佈告欄</option>
+	</select>
+  日期:<input type=text name=date size=10> (空白則使用現在時間)
+	</td></tr>
+	
+	<tr><td>[寫作類必填] 題目:<input type=text name=title> 
+	<select name=type>
+	<option value=0>生活小品</option>
+	<option value=1>電影</option>
+	<option value=2>回憶錄</option>
+	<option value=3>搞笑集</option>
+	</select>
+	</td></tr>
+	
+	
+	<tr><td>
+	刪除首頁文章<input type=text  name=delete value=0 maxlength=3 size=2>篇</input>
+  (1:從最舊的刪,-1從最新的刪)		
+	</td></tr>
+
+  
+  <tr><td>
+  公佈在首頁?
+	<select name=display>
+	<option value=0>否</option>
+	<option value=1 selected>是</option>
+	</select>
+	
+  <input type=button onclick="music()" value='music' />
+  <input type=button onclick="link()" value='link' />
+  <input type=button onclick="img()" value='Img' />
+  </td></tr>
+  	
+	<tr><td><textarea rows=30 cols=65 name="msg"></textarea></td></tr>
+
+  </table>
+	<form>
+
+
+</body>
+

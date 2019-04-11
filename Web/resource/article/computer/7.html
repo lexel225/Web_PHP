@@ -1,0 +1,103 @@
+<html>
+
+<head>
+<title>文章典藏</title>
+
+<link rel=stylesheet type="text/css" href="../../background.css">
+</head>
+
+<body background="../bg.jpg">
+
+<center>
+<b align=center><a href="computer.html">回上一頁</a></b>
+<hr size=3 color=green>
+
+
+	<table border=1 cellspacing=5 cellpadding=10 >
+	
+	<tr align=center><td width=500><font size=3 color=blue>CSS 屬性介紹</font></td></tr>
+	<tr><td><font size=3 color=brown>
+<pre>	
+字體部分
+
+字型:
+font-family:"字型1,字型2,字型3,…" 設定字型使用的優先順序
+
+大小(有多種用法)
+font-size: 20pt 直接設定大小
+font-size: 200% 以百分比控制
+font-size: +10pt 相對控制,用正負號加大或縮小字型
+font-size: large 使用內建尺寸,共7種
+
+xx-small,x-small,small,medium,large,x-large,xx-large
+
+粗細
+font-weight:500 設定字體粗細(100~900)
+font-weight:bold 使用內建尺寸;normal=400,bold=700
+
+樣式
+font-style:italic normal或italic(斜體)
+
+顏色
+color:blue 藍色的字
+background-color:yellow 黃色底
+
+------------------------------------------------------------------------------
+
+排列部分
+
+對齊:
+text-align:center 有3種:left,center,right
+
+字距
+letter-spacing:10 字距10點
+
+行高
+line-height:20pt 該行文字高度24
+
+-----------------------------------------------------------------------------
+
+
+背景圖片部分(也可以使用在表格裡)
+
+background-color: 不說了,自己挑顏色吧
+
+background-image:url(圖片檔) 圖片所在的URL,或者用none表示透明背景
+
+background-attachment: scroll或fixed ;
+設定背景圖要不要跟者網頁一起捲動
+
+background-position:30px 60px 
+設圖片開始顯示的位置(水平位置,垂直位置)
+可以用像素(px),百分比(%),或是用關鍵字
+水平關鍵字:left,center,right
+垂直關鍵字:top,center,bottom
+
+------------------------------------------------------------------------------
+
+控制圖片(只能用在<img>)
+
+height:50pt
+width:75%
+
+例如
+
+<img src=color.gif style="height:50pt ; width:40pt ;" >
+
+------------------------------------------------------------------------------
+
+文繞圖(只能用在<img>)
+
+float:right 有left,right,none
+
+例如
+<img src=color.gif style="float:right ; height:50pt ; width:40pt ;" >
+</pre>
+	
+	</font></td></tr>
+
+	</table>
+
+</center>
+</body>
+</html>

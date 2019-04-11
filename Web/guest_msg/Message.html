@@ -1,0 +1,90 @@
+<html>
+<head>
+<title>新增留言</title>
+<link rel=stylesheet type="text/css" href="../background.css">
+<style>
+A:link{
+	text-decoration:none;
+	color:#ee9900;
+	cursor:hand;
+	font-size:12pt;
+}
+A:visited{
+	text-decoration:none;
+	color:#ee9900;
+	cursor:hand;
+	font-size:12pt;
+}
+A:hover{
+	text-decoration:underline;
+	color:blue;
+	cursor:hand;
+	font-size:12pt;
+}
+</style>
+</head>
+
+<body background="../bg2.jpg">
+
+<script>
+var today = new Date();
+day=today.getYear()+"/"+(today.getMonth()+1)+"/"+today.getDate();
+
+
+function send(){
+		
+	if (Myform.name.value=="" || Myform.msg.value==""){
+		alert("不準輸入空白啦!!");
+		return;
+		}
+		
+	re=/(\n)/g;	//把換行符號代換成<br>
+//	Myform.msg.value=Myform.msg.value.replace(re,"<br>");
+		
+//	alert(Myform.msg.value);	
+	Myform.submit();
+}
+</script>
+
+
+<center>
+<b>
+<a href="guest.php">回留言板</a> 
+<a href="../page2.php">回首頁</a>
+</b>
+<hr size=3 color=#999999>
+</center>
+
+<form name="Myform" method=post action="Message.php">
+<table align=center border=1 bordercolor=#999999 width=500>
+
+<tr><td align=center>日期</td>
+    <td><script>document.write(day);</script></td></tr>
+
+<tr><td>*你的名字</td>
+    <td><input type=text name="name"></td></tr>
+
+<tr><td align=center>*留言內容</td>
+    <td><textarea rows=10 cols=50 name="msg"></textarea></td></tr>
+
+<tr><td align=center>e-mail</td>
+    <td><input type=text name="email" ></td></tr>
+
+<tr><td align=center>個人網頁</td>
+    <td><input type=text name="homepage" ></td></tr>
+
+<tr><td colspan=2 align=center><input type=button onclick=send() value="送出留言">	<input type=reset value="重新輸入"></td>
+
+<tr><td colspan=2>
+<ol>
+<li>e-mail,個人網頁可不填</li>
+<li>可自己添加HTML標籤</li>
+<ol>
+</td></tr>
+
+</table>
+</form>
+
+
+</body>
+</html>

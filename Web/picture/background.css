@@ -1,0 +1,41 @@
+body { scrollbar-arrow-color: #FFFFFF; 
+scrollbar-3dlight-color: #FFFFFF; 
+scrollbar-highlight-color: #FFFFFF; 
+scrollbar-face-color: #FFFFFF; 
+scrollbar-shadow-color: #FFFFFF; 
+scrollbar-track-color: #FFFFFF; 
+scrollbar-darkshadow-color: #FFFFFF
+}
+
+
+body 
+{
+
+background-attachment: fixed
+
+}
+
+A:link{
+	text-decoration:none;
+	color:#ee9900;
+	cursor:hand;
+	font-size:12pt;
+}
+
+
+
+A:visited{
+	text-decoration:none;
+	color:#ee9900;
+	cursor:hand;
+	font-size:12pt;
+}
+
+
+
+A:hover{
+	text-decoration:underline;
+	color:green;
+	cursor:hand;
+	font-size:12pt;
+}

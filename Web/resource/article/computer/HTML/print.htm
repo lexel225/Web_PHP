@@ -1,0 +1,323 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=big5">
+   <meta name="KEYWORDS" content="網頁研習室【電子報】:網頁製作系列報導">
+   <meta name="Author" content="Lee Wen Neng">
+   <meta name="GENERATOR" content="Mozilla/4.7 [zh]C-CCK-MCD   (Win98; U) [Netscape]">
+   <title>實用HTML語法蒐整</title>
+<link REV="Made" HREF="mailto:mipeggy@tomail.com.tw" TITLE="Wen-Neng LEE">
+<link REV="Made" HREF="http://www.netvigator.com.tw/~mipeggy/">
+</head>
+<body>
+<a href="javascript:window.print()">[立即列印]</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+<font color="#3333FF">§實用HTML語法蒐整§</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="javascript:window.print()">[立即列印]</a>
+<br>&lt;標籤名稱&nbsp; 屬性 ="設定值"> ..要顯示之文件資料.. &lt;/標籤名稱>
+<br>&lt;Tag&nbsp; Attributes ="Value"> ..Document Of Display.. &lt;/Tage>
+<br><font color="#FF0000">※重要聲明</font>：本篇資料由【網頁研習室】李文能，費時多日編輯；在尊重編者權益下，歡迎
+<br>《網路張貼》或《加入鏈結》；為利研習，請閱讀本表<font color="#FF0000">[使用說明]</font>。
+<br>把這些注意事項及標籤全部學會，您就可以作一個不錯的網站了。
+<br>祝研習順利成功&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 網頁研習室編輯 李文能&nbsp;&nbsp;
+敬上&nbsp;&nbsp;&nbsp; http://www.wepage.com.tw/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2000.04.22
+<br><font color="#FF0000">※注意：本表為考量列印，僅列出重要部份資料；[</font><font color="#000099">另詳說明</font><font color="#FF0000">]等跳出視窗並未納入。</font>
+<br><font color="#3333FF">&nbsp;&nbsp;&nbsp; 標籤名稱、屬性及設定值&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+簡&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+介</font>
+<br><font color="#FF0000">&lt;! - -</font><font color="#000000">Note</font><font color="#FF0000">-
+-></font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+註解，不會顯示，可供爾後網頁編輯、修改、查看使用
+<br><font color="#FF0000">&lt;! - -DOCTYPE... - -></font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+文件形式宣告檔案，可省略；<font color="#3333FF">另詳說明</font>
+<br><font color="#FF0000">&lt;A&nbsp;&nbsp; HREF&nbsp; =" 檔案名稱"、"#錨的名稱"、"TARGET">&nbsp;
+A=></font><font color="#000000">Anchor</font>
+<br>&nbsp; 指定本內容超連結，" 檔案名稱"，可使用相對或絕對路徑，檔案為任何URL所指定格式均可
+<br>&nbsp; "#錨的名稱"，與&lt;A NAME="錨的名稱">併用，可用於同頁或與某一頁內的指定位置作連接
+<br>&nbsp; TARGET="VALUE"，要開啟超連結的指定視窗方式； <font color="#000099">另詳說明</font>
+<br><font color="#FF0000">&lt;A NAME="錨的名稱">&nbsp;</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+被指定連結點的名稱
+<br><font color="#FF0000">&lt;ADDRESS>....&lt;/ADDRESS>&nbsp;</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+用來顯示電子郵箱地址，與&lt;BLOCKQUOTE>功能相似
+<br><font color="#FF0000">&lt;B>.. .. &lt;/B></font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+粗體字&nbsp; <font color="#FF0000">B</font>=>Bold
+<br><font color="#FF0000">&lt;BASE&nbsp; HREF、SIZE、TARGET ></font>
+<br>&nbsp; 定議於文件檔頭&lt;HEARD>.....&lt;/HEARD>內
+<br>&nbsp; 用來作為&lt;BODY>...&lt;/BODY>內超連結位址之預設基本路徑
+<br>&nbsp; HREF=" 檔案名稱"，可使用相對或絕對路徑，其檔案為任何URL所指定格式均可
+<br>&nbsp; SIZE="阿拉伯數字"，配合<font color="#FF0000">&lt;BASEFONT></font>使用，可改變預設值的字形大小，很少使用
+<br>&nbsp; BASE TARGET="NAME"，指定的視窗名稱
+<br><font color="#FF0000">&lt;BGSOUND SRC 、LOOP、DELAY></font>
+<br>&nbsp; BGSOUND，宣告為背景音樂，檔案格式可為.MID、.AU、.WAV，<font color="#000099">僅IE可用</font>，參考&lt;EMBED>
+<br>&nbsp; SRC="URL"指定背景音樂的超連結所在目錄位置及檔名
+<br>&nbsp; LOOP=" N"，撥放次數，如設"-1"或"INFINITE"可重復撥放；DELAY="
+T"，延後撥放秒數
+<br><font color="#FF0000">&lt;BIG>.. ..&lt;/BIG>&nbsp;</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+顯示大字體
+<br><font color="#FF0000">&lt;BLINK>.. ..&lt;/BLINK></font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+會閃爍的文字，<font color="#000099">IE不支援此功能</font>
+<br><font color="#FF0000">&lt;BLOCKQUOTE>.. ..&lt;/BLOCKQUOTE></font>書信內容預先格式化，與&lt;PRE>相似，每列開頭會空5格
+<br><font color="#FF0000">&lt;BODY>.. .. &lt;/BODY></font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+顯示網頁中內容(文件)的本體
+<br><font color="#FF0000">&lt;BODY BACKGROUND=</font><font color="#3333FF">"圖檔格式"</font><font color="#FF0000">
+BGCOLOR=</font><font color="#3333FF">".."</font><font color="#FF0000">&nbsp;
+TEXT=</font><font color="#3366FF">".."</font><font color="#FF0000">&nbsp;
+LINK=</font><font color="#3333FF">".."</font><font color="#FF0000"> VLINK=</font><font color="#3333FF">".."</font><font color="#FF0000">
+ALINK=</font><font color="#3333FF">".."</font><font color="#FF0000">></font>
+<br>&nbsp; 設定網頁內背景顏色或背景圖案，及文字、超鏈結、滑鼠按下鏈結、已被按過鏈結文字顏色
+<br>&nbsp; 圖檔格式可用JPEG或GIF或PNG；PNG為最新圖檔格式，屬可攜式網路圖像，具有檔案小及
+<br>&nbsp; 高品質優點，唯目前多數瀏覽器仍未普遍支援；=".."，<font color="#000099">顏色(COLOR)另詳</font>；目前IE及NS不完全
+<br>&nbsp; 支援"PNG圖檔"；其他屬性：
+<br><font color="#FF0000">&nbsp;</font><font color="#000099"> </font><font color="#000000">MARGINWIDTH="N"
+MARGINHEIGHT="N"；設定邊界寬度及高度，N=像數(Piexl)</font>
+<br><font color="#000000">&nbsp; TOPMARGIN="N" LEFTMARGIN="N" RIGHTMARGIN="N"；設定邊緣頂、左、右邊距，N=像數</font>
+<br><font color="#000000">&nbsp; BGPROPERTIES="FIXED"，讓底圖固定不動，而文字或圖示可捲</font>動，<font color="#000099">只限IE
+4.0版本</font>
+<br>&nbsp;<font color="#FF0000">&lt;BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+跳列、段(BREAK ROW)，將後面文件往下移一列
+<br><font color="#FF0000">&lt;CENTER>.. .. &lt;/CENTER>&nbsp;&nbsp;</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+文件資料向中對齊的開始與結束
+<br><font color="#FF0000">&lt;CITE>.. ..&lt;/CITE>&nbsp;</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Citation ；斜體字型，用於引經據典的文字
+<br><font color="#FF0000">&lt;CODE>...&lt;/CODE>&nbsp;&nbsp;&nbsp;</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+用於列出一段程式碼
+<br><font color="#FF0000">&lt;COMMENT>...&lt;/COMMENT>&nbsp;&nbsp;</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+加上註解
+<br><font color="#FF0000">&lt;DFN>...&lt;/DFN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+正體字形，顯示"定義"文字
+<br><font color="#FF0000">&lt;DIV ALIGN>...&lt;/DIV></font>
+<br>&nbsp; 區塊內標籤，與&lt;PRE>功能相似，有屬性；<font color="#000099">建議使用</font>
+<br>&nbsp; ALIGN=".."，指定【內容】靠齊方式，向LEFT(左)、CENTER(中)、RIGHT(右)
+<br><font color="#3333FF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+項目清單</font>
+<br><font color="#FF0000">&lt;DIR>...&lt;/DIR>&nbsp;</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+列表文字標籤，<font color="#000099">已很少使用</font>
+<br><font color="#FF0000">&lt;DL>..、&lt;DT>、 &lt;DD> ..&lt;/DL></font>
+<br><font color="#FF0000">&lt;DL>...&lt;/DL></font>：設定定義列表的宣告開始與結束
+(Definition List)
+<br><font color="#FF0000">&lt;DT></font>：設定定義列表的項目(Definition
+Term )
+<br><font color="#FF0000">&lt;DD></font>： 設定定義列表的項目內容(Definition
+Data)，敘述前面會有2個空格，並可自動調整文字排列
+<br><font color="#FF0000">&lt;LI&nbsp; TYPE>.. ..&lt;/LI></font> ，&lt;/LI>
+可省略；列表的項目(List Item)
+<br>&nbsp; TYPE="CIRCLE"空心圓點、"DISC"實心圓點(內定)、"SQARE"實心方塊
+<br><font color="#FF0000">&lt;OL START、TYPE>...&lt;/OL></font>指定有序號列表(Ordered
+List )的屬性，與&lt;LI>塔配運用，可用於
+<br>&nbsp; 巢狀架構，亦可加入字型顏色等標籤
+<br>&nbsp; START="N"，"N"為設定起始的數字；TYPE="1"、"a"、"A"、"i"、"I"，可與START合併使用
+<br><font color="#FF0000">&lt;MENU&nbsp; TYPE>...&lt;/MENU></font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+條列文字(項目清單)標籤的開始與結束，建議少用
+<br><font color="#FF0000">&lt;UL TYPE>...&lt;/UL>&nbsp;</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+無序號的列表(Unnumbered List) ，項目開頭無編號
+<br>&nbsp; TYPE="CIRCLE"空心圓點、"DISC"實心圓點(內定)、"SQARE"實心方塊
+<br><font color="#FF0000">&lt;EM>.. .. &lt;/EM>&nbsp;</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Emphasis；斜體字型，強調用；<font color="#3333FF">一般用於視障者的網站</font>
+<br><font color="#FF0000">&lt;EMBED SRC 、 HEIGHT、 WIDTH、LOOP、AUTOSTART、HIDDEN、VOLUME></font>
+<br>&nbsp; EMBED，宣告為背景音樂，格式為.MID、.AU、.WAV，IE及NS均可使用，唯尺寸略有不同
+<br>&nbsp; SRC="URL"指定背景音樂的超連結所在目錄位置及檔名
+<br>&nbsp; LOOP=" N"，撥放次數，如設-1或INFINITE可重復撥放
+<br>&nbsp; HEIGHT=" N"，音樂控制盒高度，NS=60Piexl；WIDTH=" N"，音樂控制盒寬度，NS=150Piexl
+<br>&nbsp; AUTOSTART="YES、NO"，撥放方式，也可設為TRUE、FALSE
+<br>&nbsp; HIDDEN=" TRUE、FALSE"，音樂控制盒隱藏與否，如設-1或INFINITE可重復撥放
+<br>&nbsp; VOLUME=" N"，撥放音量，可有可無；EMBED SRC，其他用法；<font color="#000099">詳述說明</font>
+<br>&nbsp; 為免不支援此標籤之瀏覽器，您可加入這個&lt;NOEMBED>..文字說明..&lt;/NOEMBED>語法
+<br><font color="#FF0000">&lt;FONT&nbsp; COLOR、 FACE、 SIZE></font>指定字形的屬性，以上這三種屬性，可選擇或一起搭配使用
+<br>&nbsp; COLOR指定字形的顏色；<font color="#3333FF">顏色(COLOR)另詳</font>
+<br>&nbsp; FACE指定文字的字形， FACE="字型名稱"，<font color="#000099">限IE</font>，系統無指定名稱，則以內定值顯示
+<br>&nbsp; SIZE設定文字字體的大小， SIZE="1到7"，內定值3，數字越大字越大，可用+及-來改變大小
+<br><font color="#3333FF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+表單標籤</font>
+<br><font color="#FF0000">&lt;FORM METHOD ACTION> ..表單控制標籤.. &lt;/FORM></font>&nbsp;&nbsp;&nbsp;&nbsp;
+設定互動式表單之資料傳送方式
+<br><font color="#000000">&nbsp; &lt; FORM METHOD、ACTION></font>，內可含以下欄位各式屬性：
+<br>&nbsp; METHOD="GET、POST"，依需要選擇其一；<font color="#000099">另詳說明</font>
+<br>&nbsp; ACTION="URL"指定CGI程式存放的超連結所在目錄位置及檔名，可使用相對或絕對路徑
+<br>&nbsp; CGI程式的副檔名為.CGI其下的Perl程式語言，副檔名為.PL，或者根本沒有副檔名
+<br>&nbsp; "URL"也可以用Email信箱代替，並不須用到CGI，惟須加入ENCTYPE屬性；<font color="#3333FF">另詳說明</font>
+<br><font color="#FF0000">《INPUT》</font>輸入文字型表單標籤可分為下面幾種互動性欄位，無結尾標籤
+<br><font color="#FF0000">《INPUT》</font>常用屬性9項，且都要使用TYPE及NAME屬性，視況使用VALUE、SIZE等屬性
+<br>&nbsp; 格式為：<font color="#FF0000">&lt;INPUT TYPE=".."、 NAME=".."、
+VALUE=".."、 SIZE=".."..></font>其他屬性<font color="#000099">另詳說明</font>：
+<br><font color="#FF0000">MAXLENGHT=".."、 CHEKED=".."、 READONLY=".."、
+DISABLED=".."、 ACCESSKEY=".."></font>
+<br>&nbsp; 1.TYPE="TEXT"文字的基本欄位： 主要用於文字的輸入；<font color="#3333FF">另詳說明</font>
+<br>&nbsp; 2.TYPE="PASSWORD"密碼的基本欄位： 主要是提供密碼的輸入；<font color="#3333FF">另詳說明</font>
+<br>&nbsp; 3.TYPE="HIDDEN"隱藏用的基本欄位： 無法供填表者使用，主要用於內定資訊傳輸；<font color="#3333FF">詳說明</font>
+<br>&nbsp; 4.TYPE="RADIO"單一選項的基本欄位： 主要用於單一選項時的點選；<font color="#3333FF">另詳說明</font>
+<br>&nbsp; 5.TYPE="CHECKBOX"多重選項的基本欄位：主要用於多重選項時的勾選；<font color="#3333FF">另詳說明</font>
+<br>&nbsp; 6.TYPE="BUTTON"按鈕格式的基本欄位： 有兩個按鈕格式，主要用於清除或送出表單內資料
+<br>&nbsp; 您也可以使用圖片來代替BUTTON，這是HTML 4.0新增的功能；<font color="#000099">另詳說明</font>
+<br>&nbsp; 7.TYPE="IMAGE"圖片的基本欄位： 主要用於將圖片坐標傳輸給CGI處理；<font color="#3333FF">另詳說明</font>
+<br>&nbsp; 8.TYPE="FILE"上傳檔案的基本欄位： 主要用於上傳檔案的資料輸入；<font color="#000099">另詳說明</font>
+<br>&nbsp; 註：除了SUBMIT、RESET之外，所有輸入型表單，都要使用的NAME屬性；<font color="#000099">另詳說明</font>
+<br><font color="#FF0000">《SELECT》</font>標選擇式表單標籤，須結尾標籤&lt;/SELECT>，每個選項以&lt;OPTION>宣告
+<br><font color="#FF0000">《TEXTAREA》</font>多列輸入文字區標籤，須結尾標籤，用COLS及ROWS設定長寬；<font color="#000099">另詳說明</font>
+<br><font color="#FF0000">《FIELDSET》</font>表單加外框與標題，這是HTML
+4.0新增的功能(限IE使用)；<font color="#000099">另詳說明</font>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#3333FF">分割視窗</font>
+<br>&lt;<font color="#FF0000">FRAMESET&nbsp; ROWS、COLS、FRAMEBORDER、FRAMESPACING、BORDERCOLOR>...&lt;/....></font>
+<br><font color="#FF0000">&lt;FRAMESET> .. ..&lt;/FRAMESET></font> ，宣告此為多窗框(分割視窗)語法之開始與結束
+<br>&nbsp; ROWS=" X1,X2,.."，宣告設成橫排(上下)多窗框，X為百分比或點數(Piexl)；<font color="#000099">另詳說明</font>
+<br>&nbsp; COLS=" X1,X2,.."，宣告設成直排(左右)多窗框，X為百分比或點數(Piexl)；<font color="#000099">另詳說明</font>
+<br>&nbsp; FRAMEBORDER="1、0"，設定是(1,內定)否(0)顯示多窗框的邊線；也適用於FRAME標籤
+<br>&nbsp; FRAMESPACING="N"，設定多窗框間的分界粗細，N為點數(Piexl)，<font color="#3333FF">限IE使用</font>
+<br>&nbsp; BORDERCOLOR="rrggbb"，設定多窗框間的分界顏色，限IE使用；<font color="#000099">顏色(COLOR)另詳</font>
+<br><font color="#FF0000">&lt;FRAME SRC NAME、MARGINHEIGHT、MARGINWIDTH、NORESIZE、SCROLLING...></font>
+<br>&nbsp; FRAME ，宣告此為指定分割視窗，SRC="URL"，指定此窗框的超連結所在目錄位置及檔名
+<br>&nbsp; NAME="指定名稱"，為多窗框命名URL所要開啟的窗框名稱，如TOP、LEFT、RIGHT
+<br>&nbsp; MARGINHEIGHT=" N"，設定文件內容與窗框上下邊界預留空白距離，N為點數(Piexl)
+<br>&nbsp; MARGINWIDTH=" N"，設定文件內容與窗框左右邊界預留空白距離，N為點數(Piexl)
+<br>&nbsp; NORESIZE，設定此視窗不允許改變(鎖住)窗框大小，未設即表可以用滑鼠來移動他
+<br>&nbsp; SCROLLING=" YES、NO、AUTO"，設定窗框是否出現捲軸，內定為AUTO自動決定
+<br>&nbsp; FRAMEBORDER="1、0"，設定是(1,內定)否(0)顯示多窗框的邊線；也適用於FRAMESET標籤
+<br>&nbsp; 以防部份瀏覽器不支援多窗框功能，請於語法最後加上&lt;NOFRAMES>..
+..&lt;/NOFRAMES>宣告
+<br><font color="#FF0000">&lt;Hn&nbsp; ALIGN>.. ..&lt;/Hn></font> ALIGN=".."，指定文字靠齊方式，向LEFT(左)、CENTER(中)、RIGHT(右)
+<br>&nbsp; 設定文字大小，n="1、2、3、4、5、6、7"，內定值3，數字越大字越小，自動分段呈粗體字
+<br><font color="#FF0000">&lt;HEAD>.. .. &lt;/HEAD></font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+標示文件檔頭資訊的開始與結束
+<br><font color="#FF0000">&lt;HR&nbsp;&nbsp; ALIGN、COLOR、NOSHADE、SIZE、WIDTH></font>
+<br>&nbsp; 指定線段的屬性，以上這五種屬性，可選擇或一起搭配使用
+<br>&nbsp; ALIGN=".."，指定【線段】靠齊方式，向LEFT(左)、CENTER(中)、RIGHT(右)
+<br>&nbsp; COLOR指定線段的顏色，NC不支源此功能；<font color="#000099">顏色(COLOR)另詳</font>
+<br>&nbsp; NOSHADE，指定線段無陰影，內定值是有陰影效果(立體感)
+<br>&nbsp; SIZE="N"，指定線段厚度，"N"=數字，數字越大線段越粗(內定值為1)
+<br>&nbsp; WIDTH="X"，指定線段長度，"X"=百分比或點數，沒指定則以100%來顯示
+<br>&nbsp; 百分比：採瀏覽器相對值，寬度隨瀏覽器改變；點數：寬度是固定的，不隨瀏覽器改變
+<br><font color="#FF0000">&lt;HTML> .. .. &lt;/HTML></font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+宣告本內容為Html語法(文件)的開始與結束
+<br><font color="#FF0000">&lt;I>.. ..&lt;/I>&nbsp;&nbsp;</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Italic斜體字
+<br><font color="#FF0000">&lt;IFRAME SRCNAME、WIDTH、HEIGH、ALIGN&lt;/IFRAME></font>
+<br>&nbsp; FRAME的另一種新標籤，可惜的是：目前為止<font color="#000099">只有IE5.0支援</font>此語法
+<br>&nbsp; NAME="FLOAT"，設定為懸浮窗框的命名
+<br>&nbsp; WIDTH="N"懸浮窗框的寬度，單位為點數(Piexl)；HEIGH="N"懸浮窗框的高度，單位為Piexl
+<br>&nbsp; ALIGN=".."懸浮窗框的位置，向LEFT(左)、CENTER(中)、RIGHT(右)
+<br><font color="#FF0000">&lt;ISINDEX>.. ..&lt;/ISINDEX>&nbsp;&nbsp;</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+定義查詢用表單；ISINDEX PROMP="提示文字"
+<br><font color="#3333FF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+圖形影像檔</font>
+<br><font color="#FF0000">&lt;IMG&nbsp; SRC ALIGN、ALT、BORDER、 HEIGHT、
+WIDTH、 HSPACE、 LOWSRC、USEMAP、</font>
+<br><font color="#FF0000">VSPACE> </font>；&lt;IMG.....>宣告此為圖形影像檔標籤，&lt;/IMG>，結尾標籤，可有可無
+<br>&nbsp; 這些均為指定圖片屬性，可配合需要搭配使用；SRC="URL"指定圖形影像的超連結所在目錄
+<br>&nbsp; 位置及檔名
+<br>&nbsp; ALIGN=".."指定圖形影像的位置；<font color="#000099">另詳說明</font>；ALT=".."圖形影像的內容文字說明；<font color="#3333FF">另詳說明</font>
+<br>&nbsp; BORDER="N"圖形影像四周的邊框寬度，單位為點數(Piexl)
+<br>&nbsp; HEIGHT="N"圖形影像的高度，單位為Piexl；WIDTH="N"圖形影像的寬度，單位為Piexl
+<br>&nbsp; HSPACE="N"指圖形影像左、右兩旁水平方向與文字間的空隙，單位為點數(Piexl)
+<br>&nbsp; LOWSRC=".."先顯示較低解析度圖片，再展現出細圖全貌；<font color="#000099">另詳說明</font>
+<br>&nbsp; USEMAP="圖片名稱"為影像地圖屬性，宣告本圖為用戶端使用，所定名稱與MAP&nbsp;&nbsp;
+NAME同
+<br>&nbsp; VSPACE="N"指圖形影像上、下兩端垂直方向與文字間的空隙，單位為點數(Piexl)
+<br><font color="#FF0000">&lt;KBD>...&lt;/KBD></font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+KeyBoard；表示使用者輸入文字
+<br><font color="#FF0000">&lt;LINK&nbsp; REL、REV、HREF、TITLE></font>，必須放於&lt;HEAD>....&lt;/HEAD>內
+<br>&nbsp; LINK可用於指定，作者信箱、網址及文件樣式(Style Sheel)等的位置
+<br>&nbsp; REL=LINK的正向關聯；<font color="#000099">另詳說明</font>：REV=LINK的反向關聯；<font color="#3333FF">另詳說明</font>
+<br>&nbsp; HREF="URL"，指定被超連結所在目錄位置及檔名；TITLE=姓名；<font color="#000099">另詳說明</font>
+<br><font color="#FF0000">&lt;MAP&nbsp; NAME="圖片名稱">&lt;AREA&nbsp;
+SHAPE="形狀"、HREF="檔名"、COORDS="坐標">&lt;/MAP></font>
+<br>&nbsp; MAP 宣告整張地圖為影像地圖， &lt;/MAP>，結尾標籤，最好不要省略
+<br>&nbsp; 影像地圖語法後面的&lt;IMG&nbsp; SRC="URL"&nbsp; USEMAP="圖片名稱"
+>可選擇加與否
+<br>&nbsp; NAME="圖片名稱"定義影像地圖名稱；AREA="選取區塊範圍的宣告"，本圖內可設多處區塊
+<br>&nbsp; SHAPE="選取區塊的形狀"，分三種形狀"RECT"長方形、"CIRCLE"圓形、"POLY"多邊形
+<br>&nbsp; HREF="URL"指定影像地圖的超連結所在目錄位置及檔名
+<br>&nbsp; COORDS="X1,Y1,X2,Y2""選取區塊的坐標"，單位為點數(Piexl)
+<br>&nbsp; USEMAP="圖片名稱"影像地圖屬性，宣告為用戶端地圖，所定名稱與相同MAP&nbsp;&nbsp;
+NAME即可
+<br>&nbsp; 另外您也可以加入ALT=".."影像地圖的內容文字說明
+<br>&nbsp; 或加入TARGET="VALUE"，要開啟超連結的指定視窗方式，詳&lt; A HREF
+=".."語法
+<br><font color="#3333FF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+電子看板</font>
+<br><font color="#FF0000">&lt;MARQUEE>..WIDTH、HEIGHT、HSPACE、VSPACE、SCROLLAMOUNT....&lt;/MARQUEE></font>
+<br><font color="#FF0000">&lt;MARQUEE>.. ..&lt;/MARQUEE></font>，宣告本語法為(IE專用)電子看板(跑馬燈)，開始與結束標籤
+<br>&nbsp; WIDTH="N"，設定電子看板的長度，單位Piexl；HEIGHT="N"，設定看板的高度，單位為數
+<br>&nbsp; HSPACE="N"，設定電子看板左右兩端預留空白邊界，單位為點數(Piexl)
+<br>&nbsp; VSPACE="N"，設定電子看板上下兩端預留空白邊界，單位為點數(Piexl)
+<br>&nbsp; SCROLLAMOUNT="N"，設定電子看板中文字移動的距離，單位為點數(Piexl)
+<br>&nbsp; BGCOLOR="rrggbb"，設定電子看板中底色，；<font color="#000099">顏色(COLOR)另詳</font>
+<br>&nbsp; LOOP="N"，設定電子看板中字幕重覆移動的次數，內定為無限次
+<br>&nbsp; SRCOLLDELAY="T"，設定字幕每隔多久時間移動一次，單位為千分之一秒
+<br>&nbsp; ALIGN=".."，設定字幕在電子看板中的位置，靠TOP(上)內定、MIDDLE(中)、BOTTOM(下)
+<br>&nbsp; DIRECTION=".."，設定字幕在看板中的移動方向，LEFT(由右往左移動)內定、RIGHT(反之亦然)
+<br>&nbsp; BEHAVIOR=".."，設定字幕在看板中的移動方式；<font color="#000099">另詳說明</font>
+<br><font color="#FF0000">&lt;META&nbsp; CHARSET、CONTENT、NAME、HTTP-EQUIV、URL></font>，必須放於&lt;HEAD>....&lt;/HEAD>內
+<br>&nbsp; META其主要功能在提供搜索引擎檢索、文件轉換宣告；(<font color="#000099">另詳說明</font>)、內文等資料記載等
+<br>&nbsp; CHARSET採用字元編碼；<font color="#000099">另詳說明</font>
+<br>&nbsp; CONTENT所述內容，如：="TEXT/HTML;CHARSET=BIG5"(純文字/超文字;字元編碼為大五)
+<br>&nbsp; NAME(資訊的名稱)與HTTP-EQUIV(標題的名稱)用法相同=設定值，常與CONTENT及URL屬性
+<br>&nbsp; 搭配使用，將檔案資訊傳給伺服器；URL=要超連結之檔案位置與檔名
+<br><font color="#FF0000">&lt;NOBR>.. ..&lt;/NOBR>&nbsp;&nbsp;&nbsp;&nbsp;</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+強迫不跳列；更細說明
+<br><font color="#FF0000">&lt;NOFRAME>.. .. &lt;/NOFRAME>&nbsp;</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+定義不能出現分割視窗時，告知的文字顯示
+<br><font color="#FF0000">&lt;P ALIGN>.. .. &lt;/P></font> ； &lt;/P>可省略&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Paragraph分列、段(ROW)，也就是連續跳列兩次&lt;BR>
+<br>&nbsp; 設定對齊方向，ALIGN=".."，指定【線段】靠齊方式，向LEFT(左)、CENTER(中)、RIGHT(右)
+<br><font color="#FF0000">&lt;PERSON>...&lt;/PERSON>&nbsp;&nbsp;&nbsp;&nbsp;</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+顯示人名
+<br><font color="#FF0000">&lt;PRE>.. .. &lt;/PRE>&nbsp;&nbsp;</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+將文字排列，以其原貌顯示出來；<font color="#000099">更細說明</font>
+<br><font color="#FF0000">&lt;S>...&lt;/S>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+文字加刪除線
+<br><font color="#FF0000">&lt;SAMP>...&lt;/SAMP>&nbsp;&nbsp;&nbsp;&nbsp;</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+用於引用字
+<br><font color="#FF0000">&lt;SMALL>.. ..&lt;/SMALL>&nbsp;&nbsp;&nbsp;&nbsp;</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+顯示小字體
+<br><font color="#FF0000">&lt;STRIKE>.. ..&lt;/STRIKE>&nbsp;&nbsp;&nbsp;</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+文字加橫線
+<br><font color="#FF0000">&lt;STRONG>.. ..&lt;/STRONG>&nbsp;</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+粗體字型，用於加強語氣；<font color="#3333FF">一般都用於提供視障者的網站</font>
+<br><font color="#FF0000">&lt;SUB>.. ..&lt;/SUB></font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+下標字型
+<br><font color="#FF0000">&lt;SUP>.. &lt;/SUP>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+上標字型
+<br><font color="#3333FF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+表格標籤</font>
+<br><font color="#FF0000">&lt;TABLE..BORDER、BORDERCOLOR、CELLSPACING、CELLPADDING、WIDTH、HEIGHT
+&lt;/..></font>
+<br><font color="#FF0000">&lt;TABLE>... &lt;/TABLE></font>【表格】標籤的開始與結束宣告，表格設計原則為由左而右，由上而下
+<br>&nbsp; BORDER="N"，指定表格【邊框】的粗細，"N"為數字，越大就越粗
+<br>&nbsp; <font color="#000000">ORDERCOLOR="COLOR"，指定表格邊框的顏色</font>
+<br><font color="#000000">&nbsp; ORDERCOLORDARK="COLOR"，指定表格暗面邊界顏色</font>
+<br><font color="#000000">&nbsp; ORDERCOLORLIGHT="COLOR"，指定表格光面邊界顏色；</font><font color="#000099">顏色(COLOR)另詳</font>
+<br>&nbsp; CELLSPACING="N"，指定表格【內框線】的粗細，"N"為數字，越大就越粗
+<br>&nbsp; CELLPADDING="N"，指定表格【格框與內容】的空隙，"N"為數字，越大就越遠
+<br>&nbsp; WIDTH="N"，指定表格的【寬度】，"N"為點數(Piexl)或百分比(%)
+<br>&nbsp; HEIGHT="N"，指定表格的【高度】，"N"為數點數(Piexl)或百分比(%)
+<br><font color="#FF0000">&lt;TD>.. ALIGN、 BGCOLOR、COLSPAN、 ROWSPAN、NOWRAP、VALIGN、WIDTH..&lt;/TD></font>
+<br><font color="#FF0000">&lt;TD>..&nbsp; &lt;/TD></font>..宣告表格資料【DATA】欄位的開始與結束
+<br>&nbsp; ALIGN=".."，指定欄位內【資料】靠齊方式；<font color="#000099">另詳說明</font>
+<br>&nbsp; BGCOLOR=".."，設定欄位內顏色，<font color="#000099">顏色另詳</font>，同時可用於&lt;TABLE>、&lt;TH>、&lt;TR>標籤
+<br>&nbsp; COLSPAN="N"，設定【欄位】向右合併(延伸)，"N"為合併數目，限用於&lt;TH>、&lt;TD>標籤
+<br>&nbsp; HEIGHT="N"，指定欄位中的【高度】，"N"為點數，同時可用於&lt;TABLE>、&lt;TH>、&lt;TR>標籤
+<br>&nbsp; ROWSPAN="N"，設定【列位】向下合併(延伸)，"N"為合併數目，限用於&lt;TH>、&lt;TD>標籤
+<br>&nbsp; NOWRAP，強制格子內的內文寬度不受瀏覽器視窗寬度影響
+<br>&nbsp; VALIGN=".."，指定欄位內資料靠齊方式；<font color="#000099">另詳說明</font>；WIDTH="X"，指定欄位中的寬度；
+<br><font color="#FF0000">&lt;TH>...&lt;/TH>&nbsp;</font>&nbsp;&nbsp;&nbsp;
+表格列中標題【HEAD】欄的開始與結束宣告，呈粗體置中，請參考&lt;TD>標籤
+<br><font color="#FF0000">&lt;TR>...&lt;/TR>&nbsp;&nbsp;</font>&nbsp;&nbsp;&nbsp;
+表格中列【ROW】的開始與結束宣告，請參考&lt;TD>標籤
+<br><font color="#FF0000">&lt;CAPTION>.. VALIGN..&lt;/CAPTION></font>　
+&lt;CAPTION>..&nbsp; &lt;/CAPTION>..宣告表格標題的開始與結束
+<br>&nbsp;&nbsp; VALIGN=".."，控制標題資料位置，TOP(上方)及BOTTOM(底部)
+<br><font color="#FF0000">&lt;TITLE>.. .. &lt;/TITLE>&nbsp;</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+宣告文件標題的開始與結束，盡量明確簡短(64個字元)
+<br><font color="#FF0000">&lt;TT>.. .. &lt;/TT>&nbsp;&nbsp;&nbsp;</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Teletype，打字機字體
+<br><font color="#FF0000">&lt;U>.. .. &lt;/U></font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Underline，文字加底線
+<br><font color="#FF0000">&lt;VAR>...&lt;/VAR>&nbsp;&nbsp;&nbsp;</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Variable，斜體字型，用於顯示變數
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<font color="#3333FF">下次將推出最新HTML 4.0 花邊樣式(CSS)與層次(Layer)語法，敬請期待</font>
+<br>&nbsp;
+<br>&nbsp;
+<br>&nbsp;
+</body>
+</html>

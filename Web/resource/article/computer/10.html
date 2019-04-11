@@ -1,0 +1,119 @@
+<html>
+
+<head>
+<title>文章典藏</title>
+
+<link rel=stylesheet type="text/css" href="../../background.css">
+</head>
+
+<body background="../bg.jpg">
+
+<center>
+<b align=center><a href="computer.html">回上一頁</a></b>
+<hr size=3 color=green>
+
+
+	<table border=1 cellspacing=5 cellpadding=10 >
+	
+	<tr align=center><td width=500><font size=3 color=blue>簡易的Makefile</font></td></tr>
+	<tr><td><font size=3 color=brown>
+	
+<pre><xmp>
+在shell的提示符號下，若鍵入"make"，則它會到目前的目錄下找尋Makefile這個檔案
+。然後依照Makefile中所記錄的步驟一步一步的來執行。在我們寫程式的時候，如果
+事先就把compiler程式所需要的步驟先寫在Makefile中的話，想要compiler程式的時候
+就只要打入make的指令。只要程式無誤的話，就可以獲得所需要的結果了！
+
+Makefile的格式：
+(1)註解：
+        在Makefile中，任何以"#"為開頭的的文字皆為註解，make在解譯Makefile的
+        時候會忽略它。
+
+(2)續接下行：
+        在Makefile中，若一行不足以容納該命令的時候。可於該行之最後加一反斜線
+        (\)表示下一行為本行之延續，兩行應視為一行來處理。
+
+(3)巨集(macro)
+        巨集的格式為： <string> = <value>
+        例如：
+                CFLAGS = -O -systype bsd43
+
+        其實make本身已有許多的default的macro，如果要查看這些macro的話，可以
+        下make -p的命令。
+
+
+(4)法則(Rules)
+        格式如下：
+        <Target 1>: <depend>
+                <command 1>
+                <command 2>
+                ....
+
+        <Target 2>: <depend>
+                <command 3>
+                <command 4>
+                ....
+	
+(5)一個非常簡單的Makefile
+   假設我們有一個程式，共分為下面的部份：
+   menu.c       主要的程式碼部份
+   menu.h       menu.c的include file
+   utils.c      提供menu.c呼叫的一些function calls
+   utils.h      utils.c的include file
+   同時本程式亦叫用了ncurses的function calls。
+   而menu.c和utils.c皆放在/usr/src/menu下。
+   但menu.h和utils.h卻放在/usr/src/menu/include下。
+   而程式做完之後，執行檔名為menu且要放在/usr/bin下面。
+
+
+# This is the Makefile of menu
+CC = gcc
+CFLAGS = -DDEBUG -c
+LIBS = -lncurses
+INCLUDE = -I/usr/src/menu/include
+
+all: clean install
+
+install: menu
+        chmod 750 menu
+        cp menu /usr/bin
+
+menu: menu.o
+        $(CC) -o $@ $? $(LIBS)
+
+menu.o:
+        $(CC) $(CFLAGS) -o $@ menu.c $(INCLUDE)
+
+utils.o:
+        $(CC) $(CFLAGS) -o $@ utils.c $(INCLUDE)
+
+clean:
+        -rm *.o
+        -rm *~
+
+
+在上述的Makefile中，要使用某個macro可用$(macro_name)如此的形式。make會自動
+的加以展開。
+$@為該rule的Target，而$?則為該rule的depend。
+若在command的前面加一個"-"，表示若此command發生錯誤則不予理會，繼續執行下去。
+上述的Makefile的關係可以表示如下：
+                        all
+                        / \
+                   clean   install
+                               \
+                               menu
+                              /    \
+                          menu.o    utils.o
+
+若只想清除source以外的檔案，可以打make clean。
+若只想做出menu.o可以打make menu.o。
+若想一次全部做完，可以打make all或是make。
+要特別注意的是command之前一定要有一個TAB(即TAB鍵)。	
+</xmp></pre>
+	</font></td></tr>
+
+	</table>
+
+</center>
+</body>
+</html>

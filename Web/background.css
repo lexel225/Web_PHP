@@ -1,0 +1,37 @@
+body { 
+scrollbar-face-color: #FFFFFF; 
+scrollbar-arrow-color: #000000; 
+scrollbar-3dlight-color: #FFFFFF; 
+scrollbar-highlight-color: #FFFFFF; 
+scrollbar-shadow-color: #FFFFFF;  
+scrollbar-darkshadow-color: #FFFFFF;
+scrollbar-track-color: #FFFFFF;
+}
+
+
+body 
+{
+
+background-attachment: fixed;
+background-color:  #FFFFFF;
+}
+
+
+A:link{
+	text-decoration:none;
+	color:#996666;
+	cursor:hand;
+	font-size:10pt;
+}
+A:visited{
+	text-decoration:none;
+	color:#996666;
+	cursor:hand;
+	font-size:10pt;
+}
+A:hover{
+	text-decoration:underline;
+	color:#000000;
+	cursor:hand;
+	font-size:10pt;
+}

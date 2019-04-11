@@ -1,0 +1,245 @@
+<html>
+
+<head>
+<title>文章典藏</title>
+
+<link rel=stylesheet type="text/css" href="../../background.css">
+</head>
+
+<body background="../bg.jpg">
+
+<center>
+<b align=center><a href="computer.html">回上一頁</a></b>
+<hr size=3 color=green>
+
+
+	<table border=1 cellspacing=5 cellpadding=10 >
+	
+	<tr align=center><td width=500><font size=3 color=blue>Linux上寫socket程式</font></td></tr>
+	<tr><td><font size=3 color=brown>
+	
+眾所周知，Networking 一向也是 Unix/Linux 的強項，你可以架設各種不同的 Linux 伺服器，但是，你又否想過你也可以在 Linux 上寫自己的伺服器程式呢？這次我便為大家淺談如何寫一個簡單的 Server-client program，讓大家一嘗自己寫伺服器程式的滋味。</p><br><br><p>
+作者: Kam Tik   Email: <a href="mailto:kamtik@www.linux.org.hk">kamtik@www.linux.org.hk</a>
+</p>
+<p>
+當然，你必需先學會寫 C 才可以寫 server-client program。在這裡，我會假設大家已經學會。這裡我會分開兩部份，分別是用戶端和伺服端。先看看如何寫用戶端程式吧，為了了解 client program 的基本運作原理，我們首先看看 client program 的<a href="http://www.linuxhall.org/images/article/linuxsocket/client.png">流程圖</a>。
+</p><p>
+由上圖可以看到，程式的流程是先建立了 socket data，接著便是連接伺服器，然後便可以寫進或讀取資料，而這個過程可以重複，直至寫入和讀取完所需資訊後，才關閉連接，過程非常似在硬碟中存取資料。
+</p><p>
+因此，我們的第一步是要建立 socket data。首先我們要匯入一個程式館 (library)：
+</p><p><pre>
+#include <sys/socket.h>
+#include <resolv.h></pre>
+</p><p>
+這兩個 header file 內含所需的函式和 structure 定義。像使用 open() 函式去建立一個 file descriptor 用來存取硬碟中的資料一樣，我們可以用 socket() 函式去建立一個 socket descriptor，socket() 的一般用法如下：
+</p><p><pre>
+Prototype:
+int socket (int domain, int type, int protocol);</pre>
+</p><p>
+其中 domain 可以是常數值 PF_INET、PF_LOCAL、PF_IPX 或 PF_INET6：<br>
+<table><tr><td>
+PF_INET</td><td>     使用 IPv4 協定制式</td></tr><tr>
+PF_LOCAL</td><td>    一般只用作 system logger 或 print queue</td></tr><tr>
+PF_IPX      </td><td>Novell 網絡協定制式</td></tr><tr>
+PF_INET6   </td><td> 使用 IPv6 協定制式
+</td></tr></table>
+</p><p>
+而 type 就選用 SOCK_STREAM 常數值，可以作 byte stream 傳輸。而 protocol 是 network byte order ，SOCK_STREAM 只支援 protocol = 0。如果 socket() 函式發生錯誤，便會回傳負數值。
+</p><p>
+socket() 的例子：<br><pre>
+int sockfd;
+sockfd = socket(PF_INET, SOCK_STREAM, 0);</pre>
+</p><p>
+建立了 socket descriptor 後，我們便可以用 connect() 函式連接到伺服端了：
+</p><p>
+connect() 的 prototype:<br><pre>
+int connect(int sd, struct sockaddr *server, int addr_len);</pre>
+</p><p>
+其中 sd 是剛才的 socket descriptor，*server 是一個 structure 包含著伺服端的描述， addr_len 是 *server 所指著的 structure 的大小。要建立這個 structure，我們先要宣告這個 structure：
+</p><p><pre>
+struct sockaddr_in dest;</pre>
+</p><p>
+然後再初始化 (initialize) 這個 structure 的某些值，如下：
+</p><p><pre>
+bzero(&dest, sizeof(dest));
+dest.sin_family = PF_INET;
+dest.sin_port = htons(8889);
+inet_aton("127.0.0.1", &dest.sin_addr);</pre>
+</p><p>
+bzero 會把 dest 中的變數的值變為 0，然後把 dest 中的 sin_family 設為 domain (PF_INET, PF_LOCAL, PF_IPX, PF_INET6)，第三句中 8889 是 port number，是伺服端中要連接到的那一個 port number，而第四句中 "127.0.0.1" 這個字串是伺服器的 IP 位址，在這裡即是機器本身。
+</p><p>
+connect() 的例子：<br><pre>
+connect(sockfd, &dest, sizeof(dest));</pre>
+</p><p>
+如果 connect 過程中有錯誤 (例如未連接網路)，便會回傳 0。
+</p><p>
+到第三階段，可以存取資料了，要讀取資料，我們可以用 recv() 函式：
+</p><p>
+recv() 的 prototype:<br><pre>
+int recv(int sockfd, void* buf, int maxbuf, int options);</pre>
+</p><p>
+其中 sockfd 是 socket 傳回的 socket descriptor，buf 是收到資料後存放的緩沖位置，maxbuf 是緩沖區 buf 的大小，options 是一些選項 (MSG_OOB, MSG_PEEK, MSG_WAITALL, MSG_ERRQUEUE, MSG_NOSIGNAL, MSG_ERRQUEUE)，在這裡的示範會使用 0。recv() 會回傳收到資訊的大小值，如有錯誤，會回傳負數值。
+</p><p>
+recv() 的例子：<br><pre>
+char buffer[128];
+recv(sockfd, buffer, sizeof(buffer), 0);</pre>
+</p><p>
+要傳輸資料，我們可以用 send() 函式：
+</p><p>
+send() 的 prototype:<br><pre>
+int send(int sockfd, void *buffer, int msg_len, int options);</pre>
+</p><p>
+其中 sockfd、buffer 和 msg_len 和 recv() 的相同，只不過是這次把要傳輸的資訊先放進 buffer 罷了。而 options 有 MSG_OOB, MSG_DONTROUTE, MSG_DONTWAIT, MSG_NOSIGNAL，在這裡我們也會使用 0。和 recv() 一樣，send() 會回傳傳輸的總大小值。
+</p><p>
+send() 的例子：<br><pre>
+char buffer[] = "Hello World!";
+send(sockfd, buffer, sizeof(buffer), 0);</pre>
+</p><p>
+最後可以關閉連結了！方法非常簡單，只要把 socket descriptor 交給 close() 函式便可。
+</p><p>
+close() 例子：<br><pre>
+close(sockfd);</pre>
+</p><p>
+結合以上多項，我們便可以合為一個用戶端程式，範例如下 (sample-client.c)：<br>
+注: 並沒有 error handling，如果伺服器不是機器本身，請修改 "127.0.0.1" 為伺服器的 IP。例如 "192.168.1.1"。
+</p><p>
+<pre>
+#include <stdio.h>
+#include <sys/socket.h>
+#include <resolv.h>
+
+int main()
+{
+	int sockfd;
+	struct sockaddr_in dest;
+	char buffer[128];
+
+	/* create socket */
+	sockfd = socket(PF_INET, SOCK_STREAM, 0);
+	
+	/* initialize value in dest */
+	bzero(&dest, sizeof(dest));
+	dest.sin_family = PF_INET;
+	dest.sin_port = htons(8889);
+	inet_aton("127.0.0.1", &dest.sin_addr);
+
+	/* Connecting to server */
+	connect(sockfd, (struct sockaddr*)&dest, sizeof(dest));
+	
+	/* Receive message from the server and print to screen */
+	bzero(buffer, 128);
+	recv(sockfd, buffer, sizeof(buffer), 0);
+	printf("%s", buffer);
+
+	/* Close connection */
+	close(sockfd);
+
+	return 0;
+}
+</pre>
+</p><p>
+要編釋這個程式，使用指令: gcc sample-client.c -o sample-client<br>
+要執行程式可以使用指令: ./sample-client<br>
+不過在伺服器並未架設前請不要執行程式。
+</p><p>
+好了，這次我們要學寫伺服器程式，並實<a href="http://www.linuxhall.org/images/article/linuxsocket/server.png">伺服器</a>和用戶端程式的流程分別不大，只是多了幾個步驟：
+</p><p>
+中間由 close(client) 到 accept 的箭咀是個循環 (loop)，而且這個循環是無限的，代表它不斷接受用戶端的連接。
+</p><p>
+我們要用 bind() 來設定一個 port number 給這個伺服器程式：
+</p><p>
+bind() 的 prototype:<br><pre>
+int bind(int sockfd, struct sockaddr* addr, int addrlen);</pre>
+</p><p>
+其中 addr 也是 sockaddr structure，和先前的初始化過程一樣，不過 sin_addr.s_addr 就改設為 INADDR_ANY。而 addrlen 便是 addr 的大小。
+</p><p>
+接著用 listen() 使程式可接收 socket：
+</p><p>
+listen() 的 prototype:<br><pre>
+int listen(int sockfd, int queue_len);</pre>
+</p><p>
+queue_len 是可被連接數目的最大值。如沒有錯誤，它回傳 0。
+</p><p>
+要等待及接受連接，我們要使用 accept() 函式：
+</p><p>
+accept 的 prototype:<br><pre>
+int accept(int sockfd, struct sockaddr *addr, int *addr_len)</pre>
+</p><p>
+它會回傳一個 socket descriptor，用作存取。
+</p><p>
+結合這些新的元素和新的流程圖，便可以寫伺服器程式了。這個範例是 sample-client 的伺服器程式 (sample-server.c)：
+注: 並沒有 error handling
+</p><p>
+<pre>
+#include <stdio.h>
+#include <sys/socket.h>
+#include <resolv.h>
+
+int main()
+{
+	int sockfd;
+	struct sockaddr_in dest;
+	char buffer[] = "Hello World!";
+
+	/* create socket , same as client */
+	sockfd = socket(PF_INET, SOCK_STREAM, 0);
+
+	/* initialize structure dest */
+	bzero(&dest, sizeof(dest));
+	dest.sin_family = PF_INET;
+	dest.sin_port = htons(8889);
+	/* this line is different from client */
+	dest.sin_addr.s_addr = INADDR_ANY;
+
+	/* Assign a port number to socket */
+	bind(sockfd, (struct sockaddr*)&dest, sizeof(dest));
+
+	/* make it listen to socket with max 20 connections */
+	listen(sockfd, 20);
+
+	/* infinity loop -- accepting connection from client forever */
+	while(1)
+	{
+		int clientfd;
+		struct sockaddr_in client_addr;
+		int addrlen = sizeof(client_addr);
+
+		/* Wait and Accept connection */
+		clientfd = accept(sockfd, (struct sockaddr*)&client_addr, &addrlen);
+
+		/* Send message */
+		send(clientfd, buffer, sizeof(buffer), 0);
+
+		/* close(client) */
+		close(clientfd);
+	}
+
+	/* close(server) , but never get here because of the loop */
+	close(sockfd);
+	return 0;
+}</pre>
+</p><p>
+編釋: gcc sample-server.c -o sample-server<br>
+執行: ./sample-server
+</p><p>
+執行後它便開始接受連接，可以執行 sample-client 試試，便可以接收到 "Hello World!" 這個訊息了！要結束 sample-server 可以按 Ctrl-C。要把 sample-server 放在 background 中工作，可以用 ./sample-server &
+</p><p>
+如各位想下載源程式碼回來試試，可以到：
+</p><p>
+<a href="http://www.linux.org.hk/~kamtik/linuxhall/sample-client.c">http://www.linux.org.hk/~kamtik/linuxhall/sample-client.c</a><br>
+<a href="http://www.linux.org.hk/~kamtik/linuxhall/sample-server.c">http://www.linux.org.hk/~kamtik/linuxhall/sample-server.c</a>
+</p>
+<p>原文刊載在 LinuxHall 第 16 期</p>
+</font>
+</td></tr></table><br>
+</td>
+
+
+	
+	</font></td></tr>
+
+	</table>
+
+</center>
+</body>
+</html>
